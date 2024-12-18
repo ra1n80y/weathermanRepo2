@@ -13,25 +13,34 @@ import java.util.Map;
 @Controller
 public class Controller1
 {
+    public Controller1()
+    {
+        System.out.println ("http://localhost:8080/RainWebApp");
+        System.out.println ("http://localhost:8080/RainWebApp/getAliens");
+    }
+
     @RequestMapping("/RainWebApp")//Default/Homepage(Context path)
     public String disp()
     {
-        //"action" attribute of a form tag serves as a re-directory from your index page
+        //"action" attribute of a form tag serves as a re-direction from your index page(insert ctrlr name and req type)
         System.out.println ("*Controller1 Invoked*");
-        return "index";//LVN, but if view name matches with URL map, then void is permitted (not recommended)
+
+        //LVN, but if view name matches with URL map, then void is permitted (not recommended)
+        return "index";
     }
 
-    @PostMapping(value = "addAlien")//Adding data
+    @PostMapping(value = "addAlien")//Adding data (To DBs typically)
     public String addAlien(@ModelAttribute ("alien")Alien ignoredAlien)
-    //Alien ref contains constructor or setter-injected data
+    //Alien ref contains constructor or setter-injected data (whose vars store input data from index's webpage)
     {
         //@ModelAttribute can sometimes replace Model/AndView objects
         //@ModelAttribute param string should match "${}" in corresp. view file
         System.out.println ("*Controller2 Invoked*");
+
         return "result";
     }
 
-    @GetMapping({"getAliens","getX-tra","getData"})//Fetching data
+    @GetMapping({"getAliens","getX-tra","getData"})//Fetching data (From DBs typically)
     public String getAliens(Map<String,Object> model)
     {
         /*
@@ -41,12 +50,14 @@ public class Controller1
         */
         System.out.println ("*Controller3 Invoked*");
 
+        //Assume this is like a database
         List<Alien> li= Arrays.asList
                 (new Alien (1,"GODFREY")
                 ,new Alien (2,"DAMIAN")
                 ,new Alien (3,"ANNIKA"));
 
         model.put("result",li);
+
         return "detailList";
     }
 

@@ -7,7 +7,7 @@
 </head>
 
 <body>
-Result of POST-MAPPING is: ${alien}
+USER: ${alien} HAS BEEN ADDED TO DATABASE
 </body>
 
 </html>

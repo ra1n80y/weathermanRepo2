@@ -3,8 +3,8 @@ package com.RAINBOY.RainWeb.model;
 public class Alien
 {
 
-    private int ID;
-    private String NAME;
+    private final int ID;
+    private final String NAME;
 
     public Alien(int ID,String NAME)
     {
@@ -18,7 +18,7 @@ public class Alien
     @Override
     public String toString()
     {
-        return "Alien{" +
+        return "{" +
                 "ID=" + ID +
                 ", NAME='" + NAME + '\'' +
                 '}';

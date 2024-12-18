@@ -9,7 +9,7 @@
 <body>
 Welcome to Rainboy
 
-<form action="arrayResponse" method="get">
+<form action="addAlien" method="post">
 Enter ID : <input type="text" name="ID"><br>
 Enter NAME : <input type="text" name="NAME"><br>
 <input type="submit">
