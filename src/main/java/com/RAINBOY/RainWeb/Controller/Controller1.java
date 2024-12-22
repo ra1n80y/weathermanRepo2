@@ -23,6 +23,7 @@ public class Controller1
     public String disp()
     {
         //"action" attribute of a form tag serves as a re-direction from your index page(insert ctrlr name and req type)
+
         System.out.println ("*Controller1 Invoked*");
 
         //LVN, but if view name matches with URL map, then void is permitted (not recommended)
@@ -35,6 +36,7 @@ public class Controller1
     {
         //@ModelAttribute can sometimes replace Model/AndView objects
         //@ModelAttribute param string should match "${}" in corresp. view file
+
         System.out.println ("*Controller2 Invoked*");
 
         return "result";
@@ -48,6 +50,7 @@ public class Controller1
         If Spring's logic is directly used, it cannot be resolved when it runs on other machines
         All the logic should be pure Java because it'll get processed by Spring's annos and config anyway
         */
+
         System.out.println ("*Controller3 Invoked*");
 
         //Assume this is like a database
